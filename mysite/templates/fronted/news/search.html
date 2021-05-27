@@ -1,0 +1,117 @@
+{% extends 'fronted/base.html'%}
+{% load static %}
+{% block content %}
+<a href="#" class="bigrek"></a>
+  <div class="container wrapper">
+		<div class="longrek"></div>
+		<div class="clearfix"></div>
+
+		<ol class="breadcrumb">
+			<li><a href="#">Главная</a></li>
+			<li class="active">Политика</li>
+		</ol>
+		<div class="row">
+			<div class="col-md-8 col-xs-12">
+				<div class="cat_title">“{{search_text}}” so'ziga doir {{search_count}} ta ma'lumot topildi</div>
+				<div class="search_box">
+					<form action="{% url 'search' %}" method="get">
+						<div class="input-group">
+							<input type="text" name="search" placeholder="Поиск">
+							<button class="btn submit"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+				<div class="news_box">
+
+					{% for new in news %}
+
+					<div class="cat_news">
+						<div class="cat_img"><img src="/media/{{new.image}}" alt=""></div>
+						<a href="{% url 'view' news_id=new.id %}">{{new.title}}</a>
+						<p>{{new.description}}</p>
+						<span class="date">{{new.created_at}}</span>
+						<span class="news_type"><i class="fa fa-pencil"></i> {{new.author.full_name}}</span>
+					</div>
+					{% endfor %}
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li>
+								<a href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li>
+								<a href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div class="head_title">Свежие новости</div>
+				<div id="listnews" class="carousel slide listnews" data-ride="carousel">
+					<div class="news_box">
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<ul class="list_news">
+									{% for fresh in fresh_news %}
+									{% if forloop.counter0 < 4%}
+									<li>
+										<div class="list_img"><img src="/media/{{fresh.image}}" alt=""></div>
+										<a href="{% url 'view' news_id=fresh.id %}">{{fresh.title}}</a>
+										<span class="date">{{fresh.created_at}}</span>
+										<span class="news_type"><i class="fa fa-pencil"></i> {{fresh.author.full_name}}</span>
+									</li>
+									{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+							<div class="item">
+								<ul class="list_news">
+									{% for fresh in fresh_news %}
+									{% if forloop.counter > 4 and forloop.counter < 9 %}
+									<li>
+										<div class="list_img"><img src="/media/{{fresh.image}}" alt=""></div>
+										<a href="{% url 'view' news_id=fresh.id %}">{{fresh.title}}</a>
+										<span class="date">{{fresh.created_at}}</span>
+										<span class="news_type"><i class="fa fa-pencil"></i> {{fresh.author.full_name}}</span>
+									</li>
+									{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="indi_box">
+						<ol class="carousel-indicators">
+							<li data-target="#listnews" data-slide-to="0" class="active"></li>
+							<li data-target="#listnews" data-slide-to="1"></li>
+						</ol>
+					</div>
+				</div>
+
+				<div class="news_box rek">
+					<div class="rek_right">
+
+					</div>
+				</div>
+				<div class="subscribe">
+					<div class="title">Подписывайся на <b>1news.uz</b></div>
+					<form action="">
+						<div class="input-group">
+							<input type="text" name="email" placeholder="Email">
+							<button class="submit">Подписываться</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends 'fronted/base.html'%}
+{%load static%}
+{% block content %}
+<a href="#" class="bigrek"></a>
+<div class="container wrapper">
+    <div class="longrek"></div>
+    <div class="clearfix"></div>
+
+    <ol class="breadcrumb">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">{{new.category.name}}</a></li>
+        <li class="active">{{new.title}}</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <div class="view_img"><img src="/media/{{new.image}}" alt=""></div>
+            <div class="news_box view">
+                <div class="view_title">{{new.title}}</div>
+                <span class="date">{{new.created_at}}</span>
+                <span class="news_type"><i class="fa fa-pencil"></i> {{new.author.full_name}}</span>
+                <div class="view_desc">
+                <p>{{new.description}}</p>
+<!--                <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. </p>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>-->
+                <div id="bigfav" class="carousel slide view_slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="{% static 'img/car1.jpg' %}" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/meet.jpg' %}" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="{% static 'img/ekologiya.jpg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="control">
+                    <a class="left carousel-control" href="#bigfav" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right carousel-control" href="#bigfav" role="button" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. </p>
+            </div>
+            <ul class="tag">
+                <li><a href="#">#мода</a></li>
+                <li><a href="#">#новости</a></li>
+                <li><a href="#">#тег1</a></li>
+                <li><a href="#">#тег2</a></li>
+                <li><a href="#">#тег3</a></li>
+                <li><a href="#">#тег4</a></li>
+            </ul>
+            <div class="nav_news">
+                <a href="#" class="prev_news text-right">
+                    <i class="fa fa-angle-left"></i>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </a>
+                <a href="#" class="next_news">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="comment">
+                <div class="title">Комменты</div>
+                <ul>
+                    <li>
+                        <div class="com_img"><img src="{% static 'img/ava.jpg' %}" alt=""></div>
+                        <div class="com_info">
+                            <div class="author">Adam Levine</div>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                            <div class="date">02.02.2017</div>
+                            <hr>
+                        </div>
+                        <ul class="sub">
+                            <li>
+                                <div class="com_img"><img src="{% static 'img/ava.jpg' %}" alt=""></div>
+                                <div class="com_info">
+                                    <div class="author">Adam Levine</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                    <div class="date">02.02.2017</div>
+                                    <hr>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="com_img"><img src="{% static 'img/ava.jpg' %}" alt=""></div>
+                                <div class="com_info">
+                                    <div class="author">Adam Levine</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                    <div class="date">02.02.2017</div>
+                                    <hr>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                                <div class="com_img"><img src="{% static 'img/ava.jpg' %}" alt=""></div>
+                                <div class="com_info">
+                                    <div class="author">Adam Levine</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                    <div class="date">02.02.2017</div>
+                                    <hr>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="com_img"><img src="{% static 'img/ava.jpg' %}" alt=""></div>
+                                <div class="com_info">
+                                    <div class="author">Adam Levine</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                    <div class="date">02.02.2017</div>
+                                    <hr>
+                                </div>
+
+                            </li>
+                </ul>
+                <button class="btn add_comment">Добавить комментарий</button>
+                <div class="add_info">Приветствуются интересные и осмысленные комментарии по теме материала.</div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="head_title">Свежие новости</div>
+            <div id="listnews" class="carousel slide listnews" data-ride="carousel">
+                <div class="news_box">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <ul class="list_news">
+                                {% for sum in sums %}
+                                {% if forloop.counter0 < 4 %}
+                                <li>
+                                    <div class="list_img"><img src="/media/{{sum.image}}" alt=""></div>
+                                    <a href="{% url 'view' news_id=sum.id %}">{{sum.title}}</a>
+                                    <span class="date">{{sum.created_at}}</span>
+                                    <span class="news_type"><i class="fa fa-pencil"></i> {{sum.author.full_name}}</span>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <ul class="list_news">
+                                {% for sum in sums %}
+                                {% if forloop.counter > 4 %}
+                                <li>
+                                    <div class="list_img"><img src="/media/{{sum.image}}" alt=""></div>
+                                    <a href="{% url 'view' news_id=sum.id %}">{{sum.title}}</a>
+                                    <span class="date">{{sum.created_at}}</span>
+                                    <span class="news_type"><i class="fa fa-pencil"></i> {{sum.author.full_name}}</span>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="indi_box">
+                    <ol class="carousel-indicators">
+                        <li data-target="#listnews" data-slide-to="0" class="active"></li>
+                        <li data-target="#listnews" data-slide-to="1"></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="news_box rek">
+                <div class="rek_right">
+
+                </div>
+            </div>
+            <div class="subscribe">
+                <div class="title">Подписывайся на <b>1news.uz</b></div>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" name="email" placeholder="Email">
+                        <button class="submit">Подписываться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Reference List</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="">Home</a></li>
+          <li class="breadcrumb-item active">Reference List</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Responsive Hover Table</h3>
+
+                <div class="card-tools">
+                    <div class="btn btn-block btn-warning"><a href="{% url 'reference_add' %}">Add</a></div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>№</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Message</th>
+                      <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for reference in references %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ reference.name }}</td>
+                      <td>{{ reference.email }}</td>
+                      <td>{{ reference.message }}</td>
+                      <td>{{ reference.created_at }}</td>
+                      <td><div class="btn btn-block btn-warning"><a href="{% url 'news_edit' pk=reference.id %}">Edit</a></div></td>
+                      <td><div class="btn btn-block btn-success"><a href="{% url 'news_delete' pk=reference.id %}">Delete</a></div></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
